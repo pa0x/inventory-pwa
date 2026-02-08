@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Storage App</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            
+        }
+        input, button {
+            font-size: 18px;
+            margin: 5px 0;
+            padding: 8px;
+            width: 95%;
+        }
+        #results div {
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
+        }
+        #editModeBtn {
+            padding: 8px 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        } 
+        .item-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px; /* space between elements */
+            flex-wrap: wrap; /* allow wrapping on very small screens */
+            margin-bottom: 5px;
+        }
+
+        .item-number {
+            width: 15px; /* fixed width for numbers */
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .item-content {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          min-width: 0;
+          flex: 1 1 auto;
+
+        }
+
+        .item-info {
+            flex: 1 1 auto; /* take up remaining space */
+
+            word-break: break-word;
+        }
+
+        .item-quantity {
+            margin-left: auto;
+            flex-shrink: 0;
+        }    
+        
+
+
+    </style>
+</head>
+<body>
+    <h1>Name der App</h1>
+    <button id="editModeBtn" onclick="toggleEditMode()">Enable Edit Mode</button>
+    
+
+    <!-- <h3>Artikel hinzufügen</h3> -->
+    <h3>Add Item</h3>
+    <input id="name" placeholder="Enter item name">
+    <input id="location" placeholder="Enter location">
+    
+    <div> 
+    <b>Stück:</b> 
+    <input id="quantity" type="number" value="1" min="1" style="width:50px;text-align:center;">
+    <button type="button" id="qty-plus">+</button>
+    <button type="button" id="qty-minus">-</button>
+    
+    </div>
+
+    <button onclick="save()">Save</button>
+    <h3>Search Items</h3>
+    <input id="search" placeholder="Search by name" oninput="search()">
+    <h3>Results</h3>
+    <div id="results"></div>
+
+    <script src="app.js"></script>
+    <script>
+        // Register service worker
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("sw.js")
+            .then(() => console.log("Service Worker registered"))
+            .catch(err => console.log("Service Worker registration failed", err));
+        }
+    </script>
+</body>
+</html>
