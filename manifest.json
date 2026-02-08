@@ -1,5 +1,5 @@
 {
-    "name": "PWA",
+    "name": "PWA - v1.0",
     "short_name": "Storage",
     "start_url": "index.html",
     "display": "standalone",
@@ -18,3 +18,4 @@
         }
     ]
 }
+
