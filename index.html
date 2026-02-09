@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Storage App</title>
     <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="inventory-pwa/icons/icon-192.png" type="image/png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -63,29 +64,54 @@
             flex-shrink: 0;
         }    
         
+        .line {
+            height: 1px;
+            background: #999;
+            flex: 1;
+            margin: 8px 0;
+        }
 
+        .spacer-row {
+            width: 100%;
+        }
+        
+        .editable-name[contenteditable="true"] {
+            cursor: text;
+            border-bottom: 1px dashed #aaa;
+        }
 
     </style>
 </head>
 <body>
-    <h1>Name der App</h1>
-    <button id="editModeBtn" onclick="toggleEditMode()">Enable Edit Mode</button>
+    <h1>Inventar</h1>
+    
+    <button onclick="exportBackup()">Save Backup</button>
+    <input type="file" id="importFile" style="display:none" onchange="importBackup(event)">
+    <button onclick="document.getElementById('importFile').click()">Load Backup</button>
+    <br>
+    <br>
+    <button id="editModeBtn" onclick="toggleEditMode()">Data Edit Mode</button>
     
 
     <!-- <h3>Artikel hinzufügen</h3> -->
     <h3>Add Item</h3>
     <input id="name" placeholder="Enter item name">
-    <input id="location" placeholder="Enter location">
+    <input id="location" placeholder="Enter price">
+    <input id="category" placeholder="Enter category">
     
     <div> 
     <b>Stück:</b> 
-    <input id="quantity" type="number" value="1" min="1" style="width:50px;text-align:center;">
+    <input id="quantity" type="number" value="0" min="0" style="width:50px;text-align:center;">
+    
     <button type="button" id="qty-plus">+</button>
     <button type="button" id="qty-minus">-</button>
-    
+    <button onclick="addLine()">Linie hinzufügen</button>
+    <button onclick="addSpacer(1)">Leerraum hinzufügen</button>
     </div>
+    <br>
+    <button type="button" onclick="save()">Save</button>
+    
 
-    <button onclick="save()">Save</button>
     <h3>Search Items</h3>
     <input id="search" placeholder="Search by name" oninput="search()">
     <h3>Results</h3>
@@ -102,4 +128,3 @@
     </script>
 </body>
 </html>
-
