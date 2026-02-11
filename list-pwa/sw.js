@@ -48,9 +48,10 @@ self.addEventListener("fetch", event => {
         .catch(() => {
             // Optional: fallback if offline and not cached
             if (event.request.destination === "document") {
-                return caches.match("./index.html");
+                return caches.match("./list-pwa/index.html");
             }
         })
     );
 });
+
 
