@@ -1,6 +1,6 @@
 {
-    "name": "v0.1.0",
-    "short_name": "Inventar Liste",
+    "name": "v0.2.0",
+    "short_name": "Bestandsverzeichnis",
     "start_url": "./list-pwa/index.html",
     "display": "standalone",
     "background_color": "#ffffff",

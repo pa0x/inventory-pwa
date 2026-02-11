@@ -1,12 +1,12 @@
 const CACHE_NAME = "storage-app-cache-v1";
 const urlsToCache = [
     "./",
-    "./index.html",
-    "./app.js",
-    "./manifest.json",
-    "./sw.js",
-    "./icon-192.png",
-    "./icon-512.png"
+    "./list-pwa/index.html",
+    "./list-pwa/app.js",
+    "./list-pwa/manifest.json",
+    "./list-pwa/sw.js",
+    "./icons/icon-192.png",
+    "./icons/icon-512.png"
 ];
 
 // Install event: cache all files

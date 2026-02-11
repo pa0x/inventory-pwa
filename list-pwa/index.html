@@ -83,21 +83,20 @@
     </style>
 </head>
 <body>
-    <h1>Inventar</h1>
-    
-    <button onclick="exportBackup()">Save Backup</button>
+    <h1>Bestandsverzeichnis</h1>
+    <button onclick="exportBackup()">Backup speichern</button>
     <input type="file" id="importFile" style="display:none" onchange="importBackup(event)">
-    <button onclick="document.getElementById('importFile').click()">Load Backup</button>
+    <button onclick="document.getElementById('importFile').click()">Backup laden</button>
     <br>
     <br>
     <button id="editModeBtn" onclick="toggleEditMode()">Data Edit Mode</button>
     
 
     <!-- <h3>Artikel hinzufügen</h3> -->
-    <h3>Add Item</h3>
-    <input id="name" placeholder="Enter item name">
-    <input id="location" placeholder="Enter price">
-    <input id="category" placeholder="Enter category">
+    <h3>Artikel hinzufügen</h3>
+    <input id="name" placeholder="Enter Artikel">
+    <input id="location" placeholder="Enter Preis">
+    <input id="category" placeholder="Enter Kategorie">
     
     <div> 
     <b>Stück:</b> 
@@ -112,8 +111,8 @@
     <button type="button" onclick="save()">Save</button>
     
 
-    <h3>Search Items</h3>
-    <input id="search" placeholder="Search by name" oninput="search()">
+    <h3>Suche Artikel</h3>
+    <input id="search" placeholder="Suche nach Artikelname" oninput="search()">
     <h3>Results</h3>
     <div id="results"></div>
 
@@ -128,6 +127,3 @@
     </script>
 </body>
 </html>
-
-
-
